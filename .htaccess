@@ -1,0 +1,28 @@
+Options +FollowSymLinks
+RewriteEngine on
+
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+
+RewriteRule ^ - [L]
+RewriteRule ^ /index.php
+
+<IfModule mod_mime.c>
+  AddType application/wasm .wasm
+  AddOutputFilterByType DEFLATE application/wasm
+
+RewriteCond %{HTTP:Accept-encoding} (gzip.*)
+</IfModule>
+
+
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+</IfModule>
+
+Options -Indexes
