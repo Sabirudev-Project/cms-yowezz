@@ -108,8 +108,10 @@
                         <i class="bx bx-x d-block d-sm-none"></i>
                         <span class="d-none d-sm-block">Close</span>
                     </button>
-                    <button type="submit" class="btn btn-primary ml-1">
+                    <button type="submit" class="btn btn-primary ml-1" ng-disabled="loading">
                         <i class="bx bx-check d-block d-sm-none"></i>
+                        <span ng-show="loading" class="spinner-border spinner-border-sm" role="status"
+                            aria-hidden="false"></span>
                         <span class="d-none d-sm-block">Add</span>
                     </button>
                 </div>
@@ -166,20 +168,18 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel33">Login Form </h4>
+                <h4 class="modal-title" id="myModalLabel33">Import Form </h4>
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <i data-feather="x"></i>
                 </button>
             </div>
-            <form action="#">
+            <form ng-submit="importUser()">
                 <div class="modal-body">
-                    <label>Email: </label>
+                    <label>File Import: </label>
                     <div class="form-group">
-                        <input type="text" placeholder="Email Address" class="form-control">
-                    </div>
-                    <label>Password: </label>
-                    <div class="form-group">
-                        <input type="password" placeholder="Password" class="form-control">
+                        <input type="file" ngf-select ng-model="form.import" name="file"
+                            accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                            ngf-max-size="2MB" required ngf-model-invalid="errorFile">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -187,9 +187,11 @@
                         <i class="bx bx-x d-block d-sm-none"></i>
                         <span class="d-none d-sm-block">Close</span>
                     </button>
-                    <button type="button" class="btn btn-primary ml-1" data-bs-dismiss="modal">
+                    <button type="submit" class="btn btn-primary ml-1" ng-disabled="loading">
                         <i class="bx bx-check d-block d-sm-none"></i>
-                        <span class="d-none d-sm-block">login</span>
+                        <span ng-show="loading" class="spinner-border spinner-border-sm" role="status"
+                            aria-hidden="false"></span>
+                        <span class="d-none d-sm-block">Import</span>
                     </button>
                 </div>
             </form>
