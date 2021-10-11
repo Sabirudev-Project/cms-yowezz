@@ -22,11 +22,11 @@
     // API url
     // For demo purposes we fetch from local file in this plunk
     // In your application this can be a url like https://api.github.com
-    window.__env.apiUrl = 'https://api-igdx.i-kuy.com/api/v1/';
-    window.__env.baseUrl = 'https://igdx.i-kuy.com';
-    window.__env.devApiUrl = 'https://api-igdx.i-kuy.com/api/v1/';
+    window.__env.apiUrl = 'https://yowez.i-kuy.com/api/v1/';
+    window.__env.baseUrl = 'https://yowez.i-kuy.com';
+    window.__env.devApiUrl = 'https://yowez.i-kuy.com/api/v1/';
     window.__env.devBaseUrl = 'http://localhost:3000';
-    window.__env.token = "igdx_token"
+    window.__env.token = "yowez_token"
 
     // Whether or not to enable debug mode
     // Setting this to false will disable console output

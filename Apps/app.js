@@ -13,10 +13,32 @@ app.config(function ($routeProvider, $locationProvider) {
     $routeProvider
         .when("/", {
             templateUrl: "Pages/Auth/login.html?v=5",
-            controller: "landingpage",
+            controller: "login",
         })
-
-
+        .when("/superadmin", {
+            templateUrl: "Pages/admin/home.html",
+            controller: "superadmin/home",
+        })
+        .when("/superadmin/users", {
+            templateUrl: "Pages/admin/home.html",
+            controller: "superadmin/users",
+        })
+        .when("/superadmin/wof", {
+            templateUrl: "Pages/admin/home.html",
+            controller: "superadmin/wof",
+        })
+        .when("/superadmin/video", {
+            templateUrl: "Pages/admin/home.html",
+            controller: "superadmin/video",
+        })
+        .when("/superadmin/sponsor", {
+            templateUrl: "Pages/admin/home.html",
+            controller: "superadmin/sponsor",
+        })
+        .when("/superadmin/bazzar", {
+            templateUrl: "Pages/admin/home.html",
+            controller: "superadmin/bazzar",
+        })
         .otherwise({
             redirectTo: "/"
         });
@@ -80,7 +102,7 @@ app.factory("httpRequest", function ($http) {
                 return error;
             });
         },
-        delete: function (url, data, token) {
+        delete: function (url, token) {
             return $http({
                 headers: {
                     Authorization: (token != undefined) ? "Bearer " + token : "",
@@ -102,40 +124,44 @@ app.factory("httpRequest", function ($http) {
 app.factory("notification", function () {
     return {
         info: function (text) {
-            return $.toast({
-                heading: "info",
+            return Toastify({
                 text: text,
-                icon: "info",
-                loader: true, // Change it to false to disable loader
-                hideAfter: 5000,
-            });
+                duration: 3000,
+                close: true,
+                gravity: "bottom",
+                position: "left",
+                backgroundColor: "#43B3F9",
+            }).showToast();
         },
         error: function (text) {
-            return $.toast({
-                heading: "error",
+            return Toastify({
                 text: text,
-                icon: "error",
-                loader: true, // Change it to false to disable loader
-                hideAfter: 5000,
-            });
+                duration: 3000,
+                close: true,
+                gravity: "bottom",
+                position: "left",
+                backgroundColor: "#F94343",
+            }).showToast();
         },
         warning: function (text) {
-            return $.toast({
-                heading: "Warning",
+            return Toastify({
                 text: text,
-                icon: "warning",
-                loader: true, // Change it to false to disable loader
-                hideAfter: 5000,
-            });
+                duration: 3000,
+                close: true,
+                gravity: "bottom",
+                position: "left",
+                backgroundColor: "#FEFF15",
+            }).showToast();
         },
         success: function (text) {
-            return $.toast({
-                heading: "Success",
+            return Toastify({
                 text: text,
-                icon: "success",
-                loader: true, // Change it to false to disable loader
-                hideAfter: 5000,
-            });
+                duration: 3000,
+                close: true,
+                gravity: "bottom",
+                position: "left",
+                backgroundColor: "#31F829",
+            }).showToast();
         },
     };
 });

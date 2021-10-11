@@ -8,49 +8,44 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <!-- <link rel="icon" href="public/assets/favicon.ico" type="image/x-icon" /> -->
+
     <title>CMS YOWEZ</title>
-    <!-- Custom CSS -->
     <base href="/" />
+
+    <!-- AngularJS Setup -->
     <script src="/node_modules/angular/angular.min.js"></script>
     <script src="https://code.angularjs.org/1.8.2/angular-sanitize.min.js"></script>
     <script src="https://code.angularjs.org/1.8.2/angular-route.js"></script>
-    <script src="https://code.angularjs.org/1.8.2/angular-loader.js"></script>
-    <script src="https://code.angularjs.org/1.8.2/angular-aria.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-meta/1.0.3/ngMeta.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
-
-    <!-- <script src="/public/apps/app.js?v=1"></script>
-    <script src="/public/apps/controller.js?v=3"></script> -->
     <script src="/Apps/app.js"></script>
     <script src="/Apps/controller.js"></script>
     <script src="/Apps/env.js"></script>
-    <script src="/Apps/main.js"></script>
-    <link rel="stylesheet" href="public/assets/css/custom.css?v=5" />
-    <link rel="stylesheet" href="/public/games/TemplateData/style.css">
+    <script src="/Apps/controller/admin.js"></script>
+    <script src="/Apps/controller/auth.js"></script>
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous" />
-    <!-- Font Awesome -->
+    <!-- Mazer Panel Setup -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/mazer-main/dist/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/public/mazer-main/dist/assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="/public/mazer-main/dist/assets/css/app.css">
+    <link rel="stylesheet" href="/public/mazer-main/dist/assets/vendors/iconly/bold.css">
+    <link rel="stylesheet" href="/public/mazer-main/dist/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="/public/mazer-main/dist/assets/vendors/toastify/toastify.css">
+    <script src="/public/mazer-main/dist/assets/vendors/jquery/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="public/assets/css/font-awesome/css/all.min.css" />
-    <!-- Owl Carousel -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" />
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
-    </script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
-    <script src="https://apis.google.com/js/platform.js?onload=appStart" async="" defer="" gapi_processed="true"></script>
 </head>
 
 <body>
+    <div id="app">
+        <ng-view></ng-view>
+    </div>
 
-    <ng-view></ng-view>
-
+    <!-- JScript Mazer Panel -->
+    <script src="/public/mazer-main/dist/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="/public/mazer-main/dist/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/public/mazer-main/dist/assets/vendors/apexcharts/apexcharts.js"></script>
+    <script src="/public/mazer-main/dist/assets/vendors/toastify/toastify.js"></script>
+    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
 </body>
 
-</html
+</html>
