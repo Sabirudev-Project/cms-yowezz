@@ -45,7 +45,8 @@
     <script src="/public/mazer-main/dist/assets/js/bootstrap.bundle.min.js"></script>
     <script src="/public/mazer-main/dist/assets/vendors/apexcharts/apexcharts.js"></script>
     <script src="/public/mazer-main/dist/assets/vendors/toastify/toastify.js"></script>
-    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+    <script src="/node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js"></script>
+    <script src="/node_modules/ng-file-upload/dist/ng-file-upload.min.js"></script>
 </body>
 
 </html>

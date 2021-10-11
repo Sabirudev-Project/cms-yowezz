@@ -122,6 +122,22 @@ app.controller("superadmin/users", function ($scope, $rootScope, $routeParams, h
             }
         });
     }
+
+    $scope.importUser = function () {
+        $scope.loading = true;
+        httpRequest.upload('admin/users_import', __env.token, $scope.form).then(function (response) {
+            console.log(response);
+            $scope.loading = false;
+            if (response.data.status == "success") {
+                $scope.getUser();
+                notification.success(response.data.message);
+                $scope.form = {};
+                $('#addUser').modal("hide");
+            } else {
+                notification.error(response.data.message);
+            }
+        });
+    }
 });
 
 
@@ -146,19 +162,17 @@ app.controller("superadmin/wof", function ($scope, $rootScope, $routeParams, htt
     $scope.getUser();
 
     $scope.addUser = function () {
-        // console.log($scope.form);
-        httpRequest.post('admin/wof', $scope.form, __env.token).then(function (response) {
-            if (response.status == 200) {
-                $log.debug($scope.form);
-                if (response.data.status == 'success') {
-                    $scope.getUser();
-                    $scope.form = {};
-                    $('#addUser').modal("hide");
-                } else {
-                    notification.error(response.data.message);
-                }
+        $scope.loading = true;
+        httpRequest.upload('admin/wof', __env.token, $scope.form).then(function (response) {
+            console.log(response);
+            $scope.loading = false;
+            if (response.data.status == "success") {
+                $scope.getUser();
+                notification.success(response.data.message);
+                $scope.form = {};
+                $('#addUser').modal("hide");
             } else {
-                notification.error("Terjadi kesalahan pada server");
+                notification.error(response.data.message);
             }
         });
     }
@@ -287,7 +301,7 @@ app.controller("superadmin/sponsor", function ($scope, $rootScope, $routeParams,
     }
 });
 
-app.controller("superadmin/bazzar", function ($scope, $rootScope, $routeParams, httpRequest, notification, $log) {
+app.controller("superadmin/bazzar", function ($scope, $rootScope, $routeParams, httpRequest, notification, $log, Upload) {
     $scope.form = {};
     $scope.edit = {};
     $scope.delete = {};
@@ -308,19 +322,17 @@ app.controller("superadmin/bazzar", function ($scope, $rootScope, $routeParams, 
     $scope.getUser();
 
     $scope.addUser = function () {
-        // console.log($scope.form);
-        httpRequest.post('admin/bazzar', $scope.form, __env.token).then(function (response) {
-            if (response.status == 200) {
-                $log.debug($scope.form);
-                if (response.data.status == 'success') {
-                    $scope.getUser();
-                    $scope.form = {};
-                    $('#addUser').modal("hide");
-                } else {
-                    notification.error(response.data.message);
-                }
+        $scope.loading = true;
+        httpRequest.upload('admin/bazzar', __env.token, $scope.form).then(function (response) {
+            console.log(response);
+            $scope.loading = false;
+            if (response.data.status == "success") {
+                $scope.getUser();
+                notification.success(response.data.message);
+                $scope.form = {};
+                $('#addUser').modal("hide");
             } else {
-                notification.error("Terjadi kesalahan pada server");
+                notification.error(response.data.message);
             }
         });
     }
@@ -389,19 +401,17 @@ app.controller("superadmin/video", function ($scope, $rootScope, $routeParams, h
     $scope.getUser();
 
     $scope.addUser = function () {
-        // console.log($scope.form);
-        httpRequest.post('admin/video', $scope.form, __env.token).then(function (response) {
-            if (response.status == 200) {
-                $log.debug($scope.form);
-                if (response.data.status == 'success') {
-                    $scope.getUser();
-                    $scope.form = {};
-                    $('#addUser').modal("hide");
-                } else {
-                    notification.error(response.data.message);
-                }
+        $scope.loading = true;
+        httpRequest.upload('admin/video', __env.token, $scope.form).then(function (response) {
+            console.log(response);
+            $scope.loading = false;
+            if (response.data.status == "success") {
+                $scope.getUser();
+                notification.success(response.data.message);
+                $scope.form = {};
+                $('#addUser').modal("hide");
             } else {
-                notification.error("Terjadi kesalahan pada server");
+                notification.error(response.data.message);
             }
         });
     }
