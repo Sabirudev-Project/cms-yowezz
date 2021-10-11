@@ -1,0 +1,75 @@
+<div ng-controller="superadmin/sidebar">
+    <div id="sidebar" class="active">
+        <div class="sidebar-wrapper active">
+            <div class="sidebar-header">
+                <div class="d-flex justify-content-between">
+                    <div class="logo">
+                        <a href="/superadmin">
+                            <h1> <b>CMS - Superadmin</b> </h1>
+                        </a>
+                    </div>
+                    <div class="toggler">
+                        <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-menu">
+                <ul class="menu">
+                    <li class="sidebar-title">Menu</li>
+
+                    <li class="sidebar-item  " ng-class="getClass('/superadmin')">
+                        <a href="/superadmin" class='sidebar-link'>
+                            <i class="bi bi-grid-fill"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item  " ng-class="getClass('/superadmin/users')">
+                        <a href="/superadmin/users" class='sidebar-link'>
+                            <i class="bi bi-people-fill"></i>
+                            <span>Users Management</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item  " ng-class="getClass('/superadmin/sponsor')">
+                        <a href="/superadmin/sponsor" class='sidebar-link'>
+                            <i class="bi bi-flag-fill"></i>
+                            <span>Sponsor Management</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item  " ng-class="getClass('/superadmin/wof')">
+                        <a href="/superadmin/wof" class='sidebar-link'>
+                            <i class="bi bi-book-fill"></i>
+                            <span>Wall of Fame Management</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item  " ng-class="getClass('/superadmin/video')">
+                        <a href="/superadmin/video" class='sidebar-link'>
+                            <i class="bi bi-folder-symlink-fill"></i>
+                            <span>Video Url Management</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item  " ng-class="getClass('/superadmin/bazzar')">
+                        <a href="/superadmin/bazzar" class='sidebar-link'>
+                            <i class="bi bi-shop"></i>
+                            <span>Bazzar Management</span>
+                        </a>
+                    </li>
+
+
+
+                </ul>
+            </div>
+            <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+        </div>
+    </div>
+
+    <div id="main">
+        <header class="mb-3">
+            <a href="#" class="burger-btn d-block d-xl-none">
+                <i class="bi bi-justify fs-3"></i>
+            </a>
+        </header>
+        <div class="page-heading" ng-include="sidebarContentUrl"></div>
+    </div>
+</div>
+
+<script src="/public/mazer-main/dist/assets/js/pages/dashboard.js"></script>
