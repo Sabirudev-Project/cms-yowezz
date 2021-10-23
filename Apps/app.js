@@ -10,6 +10,7 @@ app.config(function ($logProvider) {
 });
 
 app.config(function ($routeProvider, $locationProvider) {
+    $locationProvider.hashPrefix(""); // add configuration
     $routeProvider
         .when("/", {
             templateUrl: "Pages/Auth/login.html?v=5",

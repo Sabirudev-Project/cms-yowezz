@@ -16,10 +16,10 @@
     <script src="/node_modules/angular/angular.min.js"></script>
     <script src="https://code.angularjs.org/1.8.2/angular-sanitize.min.js"></script>
     <script src="https://code.angularjs.org/1.8.2/angular-route.js"></script>
-    <script src="/Apps/app.js"></script>
+    <script src="/Apps/app.js?v=2"></script>
     <script src="/Apps/controller.js"></script>
     <script src="/Apps/env.js"></script>
-    <script src="/Apps/controller/admin.js"></script>
+    <script src="/Apps/controller/admin.js?v=2"></script>
     <script src="/Apps/controller/auth.js"></script>
 
     <!-- Mazer Panel Setup -->

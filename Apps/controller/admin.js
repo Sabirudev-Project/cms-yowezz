@@ -66,6 +66,7 @@ app.controller("superadmin/users", function ($scope, $rootScope, $routeParams, h
     $scope.addUser = function () {
         // console.log($scope.form);
         httpRequest.post('admin/users', $scope.form, __env.token).then(function (response) {
+            console.log(response);
             if (response.status == 200) {
                 $log.debug($scope.form);
                 if (response.data.status == 'success') {
@@ -137,6 +138,12 @@ app.controller("superadmin/users", function ($scope, $rootScope, $routeParams, h
                 notification.error(response.data.message);
             }
         });
+    }
+
+    $scope.exportUsers = function () {
+        httpRequest.get('admin/export_excel_users', {}, __env.token).then(function (response) {
+            window.open(response.data.data, "_blank");
+        })
     }
 });
 
