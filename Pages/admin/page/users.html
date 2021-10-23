@@ -23,6 +23,9 @@
                                 data-bs-target="#importUser">
                                 Import User
                             </button>
+                            <button type="button" class="btn btn-outline-primary" ng-click="exportUsers()">
+                                Export User
+                            </button>
                         </div>
                     </div>
                     <div class="card-content">
@@ -32,8 +35,9 @@
                                 <table class="table table-hover mb-0">
                                     <thead>
                                         <tr>
-                                            <th>NAME</th>
+                                            <th>ID</th>
                                             <th>EMAIL</th>
+                                            <th>PASSWORD</th>
                                             <th>ACTION
                                             </th>
                                         </tr>
@@ -44,8 +48,9 @@
                                             <td>No Data</td>
                                         </tr>
                                         <tr ng-if="usersData.length !=0" ng-repeat="x in usersData">
-                                            <td class="text-bold-500">{{x.fullname}}</td>
+                                            <td class="text-bold-500">{{x.uuid}}</td>
                                             <td>{{x.email}}</td>
+                                            <td>{{x.password}}</td>
                                             <td>
                                                 <button class="btn btn-primary dropdown-toggle me-1" type="button"
                                                     id="dropdownMenuButton" data-bs-toggle="dropdown"
@@ -97,10 +102,10 @@
                         <input required type="email" placeholder="Email Address" class="form-control"
                             ng-model="form.email">
                     </div>
-                    <label>Password: </label>
+                    <label>Total Pembelian User: </label>
                     <div class="form-group">
-                        <input required type="password" placeholder="Password" class="form-control"
-                            ng-model="form.password">
+                        <input required type="text" placeholder="Jumlah User" class="form-control"
+                            ng-model="form.count">
                     </div>
                 </div>
                 <div class="modal-footer">
